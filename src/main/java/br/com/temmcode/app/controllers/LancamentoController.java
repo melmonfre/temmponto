@@ -8,6 +8,7 @@ import java.util.stream.Collectors;
 
 import javax.validation.Valid;
 
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import org.apache.commons.lang3.EnumUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -42,6 +43,7 @@ import br.com.temmcode.app.services.LancamentoService;
 @RestController
 @RequestMapping("/api/lancamentos")
 @CrossOrigin(origins = "*")
+@SecurityRequirement(name = "bearer-key")
 public class LancamentoController {
 
 	private static final Logger log = LoggerFactory.getLogger(LancamentoController.class);

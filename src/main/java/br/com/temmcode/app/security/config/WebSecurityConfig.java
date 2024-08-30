@@ -53,7 +53,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				.antMatchers(HttpMethod.OPTIONS, "/**").permitAll()
 				.antMatchers("/auth/**", "/api/cadastrar-pj", "/api/cadastrar-pf",
 						"/configuration/security", "/webjars/**")
-				.permitAll().anyRequest().authenticated();
+				.permitAll()
+				.antMatchers("/v3/api-docs/**", "/swagger-ui.html", "/swagger-ui/**").permitAll()
+				.anyRequest().authenticated();
 		httpSecurity.addFilterBefore(authenticationTokenFilterBean(), UsernamePasswordAuthenticationFilter.class);
 		httpSecurity.headers().cacheControl();
 	}

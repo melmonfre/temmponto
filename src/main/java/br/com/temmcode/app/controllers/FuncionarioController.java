@@ -8,6 +8,7 @@ import java.util.stream.Collectors;
 
 import javax.validation.Valid;
 
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,6 +32,7 @@ import br.com.temmcode.app.utils.PasswordUtils;
 @RestController
 @RequestMapping("/api/funcionarios")
 @CrossOrigin(origins = "*")
+@SecurityRequirement(name = "bearer-key")
 public class FuncionarioController {
 
 	private static final Logger log = LoggerFactory.getLogger(FuncionarioController.class);
