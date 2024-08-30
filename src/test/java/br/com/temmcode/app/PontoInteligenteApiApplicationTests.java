@@ -1,4 +1,4 @@
-package br.com.alessanderleite.app;
+package br.com.temmcode.app;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
